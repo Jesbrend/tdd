@@ -31,3 +31,13 @@ def test_saque_maior_que_saldo():
     import pytest
     with pytest.raises(ValueError):
         conta.sacar(200)
+
+def test_valores_nao_numericos_rejeitados():
+    conta = ContaBancaria()
+    import pytest
+    with pytest.raises(TypeError):
+        conta.depositar('100')
+    with pytest.raises(TypeError):
+        conta.sacar('50')
+    with pytest.raises(TypeError):
+        conta.depositar(None)
