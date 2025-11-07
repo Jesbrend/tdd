@@ -10,3 +10,6 @@
         if valor <= 0:
             raise ValueError('Valor do depósito deve ser maior que zero')
         self._saldo += valor
+
+    def sacar(self, valor):
+        self._saldo -= valor
