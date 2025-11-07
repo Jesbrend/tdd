@@ -24,3 +24,10 @@ def test_saque_diminui_saldo():
     conta.depositar(200)
     conta.sacar(50)
     assert conta.saldo == 150
+
+def test_saque_maior_que_saldo():
+    conta = ContaBancaria()
+    conta.depositar(100)
+    import pytest
+    with pytest.raises(ValueError):
+        conta.sacar(200)
