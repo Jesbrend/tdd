@@ -7,4 +7,6 @@
         return self._saldo
 
     def depositar(self, valor):
+        if valor <= 0:
+            raise ValueError('Valor do depósito deve ser maior que zero')
         self._saldo += valor
