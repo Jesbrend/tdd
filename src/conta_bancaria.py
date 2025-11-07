@@ -12,4 +12,8 @@
         self._saldo += valor
 
     def sacar(self, valor):
+        if valor <= 0:
+            raise ValueError('Valor do saque deve ser maior que zero')
+        if valor > self._saldo:
+            raise ValueError('Saldo insuficiente')
         self._saldo -= valor
