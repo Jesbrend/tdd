@@ -18,3 +18,9 @@ def test_deposito_valor_invalido():
         conta.depositar(0)
     with pytest.raises(ValueError):
         conta.depositar(-10)
+
+def test_saque_diminui_saldo():
+    conta = ContaBancaria()
+    conta.depositar(200)
+    conta.sacar(50)
+    assert conta.saldo == 150
